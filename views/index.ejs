@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+    <% if(items.length === 0) { %>
+      <% } else { %>
+    <% items.forEach(i => { %> 
+      <p> <%= i.item %> <%= i.done ? 'Done' : 'Not Done' %></p>
+
+      <% }) %> <% } %>
+    <form method="POST" action="/">
+      New To-Do: <input type="text" name="todoItem">
+      <button type="submit" >ADD TO-DO</button>
+    </form>
+    
+  </body>
+</html>
