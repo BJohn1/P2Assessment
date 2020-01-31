@@ -16,4 +16,10 @@ router.post('/', (req,res)=>{
   res.redirect('/')
 })
 
+router.delete('/:id', (req,res)=>{
+  items.splice(req.params.id,1)
+  console.log(items)
+  res.redirect('/')
+});
+
 module.exports = router;

@@ -9,8 +9,9 @@
     <p>Welcome to <%= title %></p>
     <% if(items.length === 0) { %>
       <% } else { %>
-    <% items.forEach(i => { %> 
-      <p> <%= i.item %> <%= i.done ? 'Done' : 'Not Done' %></p>
+    <% items.forEach((i, idx) => { %> 
+      <li> <%= i.item %> <%= i.done ? 'Done ' : 'Not Done ' %></td><form action="/<%= idx%>?_method=DELETE" method="POST" class="delete-form"><button type="submit">X</button></form>
+      </li>
 
       <% }) %> <% } %>
     <form method="POST" action="/">
